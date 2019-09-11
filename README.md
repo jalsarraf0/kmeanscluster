@@ -1,6 +1,6 @@
 # kmeanscluster
 <h2><strong>Status&nbsp;</strong></h2>
-<p><strong>This is a Python script which uses unsupervised machine learning and K-Means Clustering. This algorithim can to form clusters of data based upon how similar the data values are. You will need your own dataset for this work.<br /></strong></p>
+<p><strong>This is a Python script which uses unsupervised machine learning and K-Means Clustering. This algorithim can form clusters of data based upon how similar the data values are. You will need your own dataset for this work.<br /></strong></p>
 <h2><strong>Features</strong></h2>
 <p><strong>Labels data that is not labeled and groups them by clusters by using unsupervised machine learning. Useful in data mining.<br /></strong></p>
 <h2><strong>Dependencies<br /></strong></h2>
