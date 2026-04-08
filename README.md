@@ -1,17 +1,37 @@
 # kmeanscluster
-<h2><strong>Status&nbsp;</strong></h2>
-<p><strong>This is a Python script which uses unsupervised machine learning and K-Means Clustering. This algorithim can form clusters of data based upon how similar the data values are. You will need your own dataset for this to work.<br /></strong></p>
-<h2><strong>Features</strong></h2>
-<p><strong>Labels data that is not labeled and groups them by clusters by using unsupervised machine learning. Useful in data mining.<br /></strong></p>
-<h2><strong>Dependencies<br /></strong></h2>
-<p><strong>numpy</strong></p>
-<p><strong>matplotlib.pyplot</strong></p>
-<h2><strong>How to Use<br /></strong></h2>
-<p><strong>Specify the value of K and import your dataset.</strong></p>
-<h2>Changelog (Version 0.0.1)</h2>
-<p><strong>Script created.<br /></strong></p>
-<h2>Bugs</h2>
-<p><strong>No known bugs at this time.&nbsp;</strong></p>
-<h2><strong>Version Number</strong></h2>
-<p><strong>Version 0.0.1</strong></p>
-<p><strong><img src="https://i.ytimg.com/vi/b99UVkWzYTQ/maxresdefault.jpg" alt="" width="1280" height="720" /></strong></p>
+
+A from-scratch K-Means clustering implementation in Python using soft (fuzzy) assignments.
+
+## Overview
+
+This project demonstrates unsupervised machine learning via K-Means clustering. Rather than hard cluster assignments, it uses a soft assignment approach with a temperature parameter (`beta`) that controls how sharply points are assigned to cluster centers. The algorithm iterates between updating assignments and recomputing means, stopping early when the cost change falls below a threshold.
+
+The script generates synthetic 2-D data from three Gaussian distributions, runs the clustering, and plots the result at each iteration using a subplot grid.
+
+## How to Run
+
+**1. Install dependencies**
+
+```bash
+pip install numpy matplotlib
+```
+
+**2. Run the script**
+
+```bash
+python kmeans.py
+```
+
+The `main()` function generates 900 sample points across 3 clusters and runs the algorithm with K=3. Cluster separation and the number of iterations can be adjusted by editing the `s` and `max_iter` variables directly in the script.
+
+## Algorithm Details
+
+- Soft assignment: each point's membership `R[n, k]` is computed via a softmax over distances, scaled by `beta`
+- Centroid update: means are recomputed as the weighted average of all points under each cluster
+- Convergence: stops when `|cost[i] - cost[i-1]| < 1e-4` or `max_iter` is reached
+- Distance metric: squared Euclidean distance
+
+## Dependencies
+
+- numpy
+- matplotlib
